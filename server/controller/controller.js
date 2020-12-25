@@ -20,8 +20,7 @@ exports.create = (req,res)=>{
     user
         .save(user)
         .then(data => {
-            //res.send(data)
-            res.redirect('/add-user');
+            res.redirect('/');
         })
         .catch(err =>{
             res.status(500).send({
@@ -46,7 +45,7 @@ exports.find = (req, res)=>{
                 }
             })
             .catch(err =>{
-                res.status(500).send({ message: "Erro retrieving user with id " + id})
+                res.status(500).send({ message: "Error retrieving user with id " + id})
             })
 
     }else{
